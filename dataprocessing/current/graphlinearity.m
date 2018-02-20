@@ -28,5 +28,8 @@ function graphlinearity(names)
             f_32 = [f_32,name];
         end
     end
-    
+   %graph all f_26
+   %graph all f_28
+   %graph all f_30
+   %graph all f_32
 end
