@@ -19,6 +19,7 @@ function names = ms_compress_outer(FILE,cmin,cmax,fmin,fmax,bmin,bmax)
     output_size = int16(csize * fsize * bsize);
     %array of matrice names with c,f,b information
     names = strings(1,output_size);
+    %names = containers.Map('KeyType','char','ValueType','double');
    
     i = 1;
     for c = cmin:cstep:cmax
@@ -26,10 +27,11 @@ function names = ms_compress_outer(FILE,cmin,cmax,fmin,fmax,bmin,bmax)
             for b = bmax:bstep:bmin
                 [output,name] = ms_compress_inner(input,c,f,b);
 %                 writemda16i(name, output)
-                save (strcat(name,'.mat'), 'output');
-                names(i) = strcat(name);
+                save (strcat(name,".mat"), "output");
+                names(i) = name;
+                %names(convertStringsToChars(name)) = [size(output),max(output)];
                 %TEST TO SAVE AS MATLAB FILE
-%                 output = [];
+                clear output
             i = i+1;
             end
         end
