@@ -1,4 +1,8 @@
 function [output,name] = ms_compress_inner(input,c,Fs,f,n)
+    %input = mat file of data, c = desired non-linearity constant,
+    %Fs = original sampling rate, f = desired resampling rate, 
+    %n = desired bit depth
+    
     input = double(input);
     
     %create file name
