@@ -3,7 +3,7 @@ function ms_compress_graph(names,transformed,data)
 %     [names, transformed] = ms_nested_compress(data);
 %     i = 1;
     diff = cell(length(transformed));
-%     tallUnqOg = tall(unique(data,'stable').');
+    tallUnqOg = tall(unique(data,'stable').');
 %     while i <= length(names)
 %         diff{i} = tall(unique(data-double(transformed{i}),'stable').');
 %     end
